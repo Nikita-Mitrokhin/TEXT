@@ -20,6 +20,7 @@ int TText :: GoFirstLink ( void ) { // переход к первой строке
   pCurrent = pFirst;
   if ( pCurrent == NULL ) SetRetCode(TextError); else SetRetCode(TextOK);
   return RetCode;
+  printf("%s",pCurrent->Str);
 }
 
 int TText :: GoDownLink  ( void ) { // переход к след. строке по Down
@@ -43,6 +44,7 @@ int TText :: GoNextLink  ( void ) { // переход к след. строке по Next
       SetRetCode(TextOK);
   }
   return RetCode;
+  printf("%s",pCurrent->Str);
 }
 
 
@@ -253,7 +255,7 @@ PTText TText :: GetCopy() { // копирование текста
         else { // второй этап создания копии
 
 		pl2 = pl1->GetNext();
-	    strcpy(pl1->Str.pl2->Stre);
+	    strcpy(pl1->Str,pl2->Str);
 		pl1->pNext = cpl;
 		cpl = pl1;
 
